@@ -1,10 +1,10 @@
 package com.algaworks.algatransito.api.controller;
 
-import com.algaworks.algatransito.domain.exception.NegocioException;
 import com.algaworks.algatransito.domain.model.Proprietario;
 import com.algaworks.algatransito.domain.repository.repository.ProprietarioRepository;
 import com.algaworks.algatransito.domain.service.RegistroProprietarioService;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,20 +12,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/proprietarios")
 public class ProprietarioController {
 
-
-    @Autowired
-    private RegistroProprietarioService registroProprietarioService;
-
-    //@Autowired
-    private ProprietarioRepository proprietarioRepository;
-
-    public ProprietarioController(ProprietarioRepository proprietarioRepository) {
-        this.proprietarioRepository = proprietarioRepository;
-    }
+    private final RegistroProprietarioService registroProprietarioService;
+    private final ProprietarioRepository proprietarioRepository;
 
     @GetMapping
     public List<Proprietario> listar() {

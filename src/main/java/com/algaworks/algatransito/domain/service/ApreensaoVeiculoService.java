@@ -1,6 +1,5 @@
 package com.algaworks.algatransito.domain.service;
 
-import com.algaworks.algatransito.domain.model.StatusVeiculoEnum;
 import com.algaworks.algatransito.domain.model.Veiculo;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

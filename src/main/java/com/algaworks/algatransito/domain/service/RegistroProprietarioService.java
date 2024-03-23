@@ -3,14 +3,15 @@ package com.algaworks.algatransito.domain.service;
 import com.algaworks.algatransito.domain.exception.NegocioException;
 import com.algaworks.algatransito.domain.model.Proprietario;
 import com.algaworks.algatransito.domain.repository.repository.ProprietarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+@AllArgsConstructor
 @Service
 public class RegistroProprietarioService {
-    @Autowired
-    private ProprietarioRepository proprietarioRepository;
+
+    private final ProprietarioRepository proprietarioRepository;
 
     @Transactional
     public Proprietario salvar(Proprietario proprietario) {
@@ -35,4 +36,5 @@ public class RegistroProprietarioService {
         return proprietarioRepository.findById(proprietarioId)
                 .orElseThrow(() -> new NegocioException("Proprietário não encontrado"));
     }
+
 }

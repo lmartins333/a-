@@ -33,7 +33,7 @@ public class VeiculoController {
     @GetMapping("/{veiculoId}")
     public ResponseEntity<VeiculoModel> buscar(@PathVariable Long veiculoId) {
         return veiculoRepository.findById(veiculoId)
-                .map(veiculo -> veiculoAssembler.toModel(veiculo))
+                .map(veiculoAssembler::toModel)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }

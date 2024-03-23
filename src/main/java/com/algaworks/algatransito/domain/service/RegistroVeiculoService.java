@@ -5,15 +5,12 @@ import com.algaworks.algatransito.domain.exception.NegocioException;
 import com.algaworks.algatransito.domain.model.Proprietario;
 import com.algaworks.algatransito.domain.model.StatusVeiculoEnum;
 import com.algaworks.algatransito.domain.model.Veiculo;
-import com.algaworks.algatransito.domain.repository.repository.ProprietarioRepository;
 import com.algaworks.algatransito.domain.repository.repository.VeiculoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
-import java.util.Optional;
 
 @AllArgsConstructor
 @Service
